@@ -19,16 +19,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm i
-    - run: npm run dev
     - uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: docker-hub-repo/image-name
+        image: bisratawoke/project-management
+        tags: latest
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}

@@ -139,7 +139,7 @@ const tokenChecker = async(req,res,next) => {
 			
 			//making api call
 			
-			const response = await fetch(`${process.env.AUTH_SERVICE_HOST}/account/service/check`,opt)
+			const response = await fetch(`${process.env.AUTH_SERVICE_HOST}/api/account/service/check`,opt)
 			
 			if(response.status === 200) {
 				
@@ -201,7 +201,8 @@ const checkProject = async(req,res,next) => {
 			
 			try{
 				
-				console.log(res.userInfo)
+				console.log(res.userInfo);
+				
 				const {proj_name} = req.query;
 				
 				let query = 'select * from projects where proj_name=$1 and owner=$2';

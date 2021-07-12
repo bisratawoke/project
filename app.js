@@ -10,6 +10,13 @@ app.use(express.json());
 //custom routers 
 const projectRouter = require('./src/routers/projectRouter');
 
+app.get('/api/project/test',(req,res) => {
+  
+  return res.json({
+   mssg: 'hello world'
+  })
+})
+
 app.use('/api/project',projectRouter);
 //listen
 

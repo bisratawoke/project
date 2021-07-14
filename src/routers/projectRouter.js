@@ -29,7 +29,7 @@ projectRouter.post('/create',tokenChecker,create,(req,res) => {
 		
 		return res.status(200).json({
 	
-			message:'proj_pub_id
+			message: proj_pub_id
 		
 		})
 	

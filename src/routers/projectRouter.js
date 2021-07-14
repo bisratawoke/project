@@ -23,11 +23,21 @@ projectRouter.get('/find',tokenChecker,find,(req,res) => {
 
 projectRouter.post('/create',tokenChecker,create,(req,res) => {
 	
-	return res.status(200).json({
-	
-		message:'success'
+	if(res.proj_pub_id) {
 		
-	})
+		let {proj_pub_id} = res;
+		
+		return res.status(200).json({
+	
+			message: proj_pub_id
+		
+		})
+	
+	}
+	else {
+	
+		return res.status(500).json({ message : '[SERVER_ERROR] Unknown'});
+	}
 
 
 })

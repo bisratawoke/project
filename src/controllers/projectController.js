@@ -73,6 +73,8 @@ const create = async(req,res,next) => {
 						
 						console.log(response);
 						
+						res.proj_pub_id = proj_pub_id;
+						
 						return next();
 				
 					}catch(err) {

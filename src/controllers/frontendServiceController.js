@@ -18,7 +18,7 @@ const isActive = async(req,res,next) => {
 			
 			console.log(response);
 			
-			res.isActive = true;
+			res.info= response;
 			
 			return next(); 
 		

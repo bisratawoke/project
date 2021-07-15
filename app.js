@@ -31,7 +31,7 @@ app.get('/api/project/sertest',(req,res) => {
 app.use('/api/project',projectRouter);
 
 //using serviceRouter
-app.use('api/project/service',serviceRouter);
+app.use('/api/project/service',serviceRouter);
 //listen
 
 app.listen(PORT,() => console.log(`[PROJECT SERVER] running on port ${PORT}`))

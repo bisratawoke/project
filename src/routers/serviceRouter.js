@@ -17,11 +17,11 @@ serviceRouter.get('/frontend/isActive',tokenChecker,isActive,(req,res) => {
 	
 	console.log(`in main ${res.isActive}`);
 	
-	if(res.isActive) {
+	if(res.info) {
 		
 		return res.status(200).json({
 		
-			message: true
+			message: res.info
 		});
 		
 	}

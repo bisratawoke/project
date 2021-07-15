@@ -10,6 +10,11 @@ app.use(cors());
 //custom routers 
 const projectRouter = require('./src/routers/projectRouter');
 
+//service router
+
+const serviceRouter = require('./src/routers/serviceRouter');
+
+//health check url
 app.get('/api/project/test',(req,res) => {
   
   return res.json({
@@ -17,7 +22,11 @@ app.get('/api/project/test',(req,res) => {
   })
 })
 
+//using projectRouter
 app.use('/api/project',projectRouter);
+
+//using serviceRouter
+app.use('api/project/service',serviceRouter);
 //listen
 
 app.listen(PORT,() => console.log(`[PROJECT SERVER] running on port ${PORT}`))

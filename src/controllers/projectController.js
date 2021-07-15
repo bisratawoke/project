@@ -21,7 +21,6 @@ const find = async(req,res,next) => {
 		
 		res.list = response;
 		
-		
 		return next();
 		
 	}catch(err) {

@@ -22,6 +22,11 @@ app.get('/api/project/test',(req,res) => {
   })
 })
 
+app.get('/api/project/sertest',(req,res) => {
+	return res.json({
+   mssg: 'hello world'
+  })
+})
 //using projectRouter
 app.use('/api/project',projectRouter);
 

@@ -18,6 +18,8 @@ const isActive = async(req,res,next) => {
 			
 			console.log(response);
 			
+			res.isActive = true;
+			
 			return next(); 
 		
 		}catch(err) {

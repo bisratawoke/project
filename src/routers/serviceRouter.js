@@ -1,9 +1,18 @@
 const serviceRouter = require('express').Router();
 const {tokenChecker} = require('../controllers/projectController.js');
 const {isActive,activate} = require('../controllers/frontendServiceController.js');
+
+
+//health check url
+serviceRouter.get('/',(req,res) => {
+
+	return res.json({
+	
+		message: 'health check url'
+	});
+});
+
 //check to see if frontend service is active i.e check if it exist
-
-
 serviceRouter.get('/frontend/isActive',tokenChecker,isActive,(req,res) => {
 	
 	console.log(`in main ${res.isActive}`);

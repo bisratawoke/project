@@ -51,7 +51,7 @@ const activate = async(req,res,next) => {
 	
 		try{
 		
-			let query = 'insert into frontend(proj_pub_id,dn,owner) values($1,$2,$3,$4)';
+			let query = 'insert into frontend(proj_pub_id,dn,owner) values($1,$2,$3)';
 			
 			let value = [req.query.proj_pub_id,req.query.dn,res.userInfo.pub_id];
 			
